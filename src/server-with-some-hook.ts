@@ -10,7 +10,9 @@ const someHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHand
   done()
 }
 
-const server = fastify()
+const server = fastify({
+  logger: true
+})
 
 server.addHook('onRequest', someHook)
 
