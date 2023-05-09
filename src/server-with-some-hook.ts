@@ -5,8 +5,23 @@ import fastify, {
 } from 'fastify'
 import { exit } from 'node:process'
 
-const someHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHandlerDoneFunction): void => {
+const someRequestHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHandlerDoneFunction): void => {
   console.log('Executando o hook antes do handler')
+  done()
+}
+
+const someResponseHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHandlerDoneFunction): void => {
+  console.log('Executando o hook depois do handler')
+  done()
+}
+
+const somePreHandlerHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHandlerDoneFunction): void => {
+  console.log('Executando o hook antes do preHandler')
+  done()
+}
+
+const somePreValidationHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHandlerDoneFunction): void => {
+  console.log('Executando o hook antes do preValidation')
   done()
 }
 
@@ -14,7 +29,10 @@ const server = fastify({
   logger: true
 })
 
-server.addHook('onRequest', someHook)
+server.addHook('onRequest', someRequestHook)
+server.addHook('onResponse', someResponseHook)
+server.addHook('preHandler', somePreHandlerHook)
+server.addHook('preValidation', somePreValidationHook)
 
 const handlerListening = (error: Error | null, address: string): void => {
   if (error != null) {
