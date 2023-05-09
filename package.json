@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
-    "start:dev": "tsx watch src/server-with-swagger-plugin.ts",
+    "start:dev:simple": "tsx watch src/server-simple.ts",
+    "start:dev:swagger": "tsx watch src/server-with-swagger-plugin.ts",
+    "start:dev:some-hook": "tsx watch src/server-with-some-hook.ts",
     "build": "tsup src"
   },
   "author": "gabrielbsx",
