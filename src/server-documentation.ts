@@ -24,7 +24,7 @@ const fastify = Fastify({
 })
 
 docs.forEach((doc) => {
-  fastify.get(doc.uri, function (request, reply) {
+  fastify.get(doc.uri, function (_request, reply) {
     void reply.redirect(doc.link)
   })
 })
