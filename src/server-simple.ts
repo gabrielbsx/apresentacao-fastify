@@ -15,6 +15,10 @@ server.get('/', async (_request, reply) => {
   return await reply.send({ hello: 'world' })
 })
 
+server.post('/', async (_request, reply) => {
+  return await reply.send({ hello: 'world' })
+})
+
 server.listen({
   port: 3000,
   host: 'localhost'
