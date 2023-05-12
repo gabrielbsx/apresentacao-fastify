@@ -8,6 +8,7 @@
     "start:dev:swagger": "tsx watch src/server-with-swagger-plugin.ts",
     "start:dev:some-hook": "tsx watch src/server-with-some-hook.ts",
     "start:dev:some-plugin": "tsx watch src/server-with-some-plugin.ts",
+    "start:dev:decorator": "tsx watch src/server-with-decorator.ts",
     "start:dev:validator": "tsx watch src/server-with-validator.ts",
     "start:doc": "tsx watch src/server-documentation.ts",
     "start:presentation": "tsx watch src/server-presentation.ts",
