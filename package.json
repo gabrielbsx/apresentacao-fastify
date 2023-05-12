@@ -10,8 +10,8 @@
     "start:dev:some-plugin": "tsx watch src/server-with-some-plugin.ts",
     "start:dev:decorator": "tsx watch src/server-with-decorator.ts",
     "start:dev:validator": "tsx watch src/server-with-validator.ts",
+    "start:dev:presentation": "tsx watch src/server-presentation.ts",
     "start:doc": "tsx watch src/server-documentation.ts",
-    "start:presentation": "tsx watch src/server-presentation.ts",
     "build": "tsup src"
   },
   "author": "gabrielbsx",
