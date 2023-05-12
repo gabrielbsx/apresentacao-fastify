@@ -17,6 +17,8 @@ async function main (): Promise<void> {
     server.someDecorator({ message: 'Hello World' })
     return await reply.send('decorator example')
   })
+
+  await server.listen({ port: 3000 })
 }
 
 void main()
