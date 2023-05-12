@@ -5,15 +5,15 @@ import fastify, {
 import { exit } from 'node:process'
 
 async function main (): Promise<void> {
-  const somePlugin = async (_server: FastifyInstance, options: any, done: HookHandlerDoneFunction): Promise<void> => {
+  const server = fastify({
+    logger: true
+  })
+
+  const somePlugin = (_server: FastifyInstance, options: any, done: HookHandlerDoneFunction): void => {
     console.log('Executando o plugin')
     console.log('Options:', options)
     done()
   }
-
-  const server = fastify({
-    logger: true
-  })
 
   const handlerListening = (error: Error | null, address: string): void => {
     if (error != null) {
@@ -23,7 +23,7 @@ async function main (): Promise<void> {
     server.log.info(`Server listening on ${address}`)
   }
 
-  await server.register(somePlugin, {
+  void server.register(somePlugin, {
     some: 'options'
   })
 
