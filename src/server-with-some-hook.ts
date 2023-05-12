@@ -6,12 +6,12 @@ import fastify, {
 import { exit } from 'node:process'
 
 const someRequestHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHandlerDoneFunction): void => {
-  console.log('Executando o hook antes do handler')
+  console.log('Executando o hook antes do request')
   done()
 }
 
 const someResponseHook = (_request: FastifyRequest, _reply: FastifyReply, done: HookHandlerDoneFunction): void => {
-  console.log('Executando o hook depois do handler')
+  console.log('Executando o hook depois do response')
   done()
 }
 
@@ -43,6 +43,7 @@ const handlerListening = (error: Error | null, address: string): void => {
 }
 
 server.get('/', async (_request, reply) => {
+  console.log('handler')
   return await reply.send('hook example')
 })
 
