@@ -12,6 +12,9 @@
     "start:dev:validator": "tsx watch src/server-with-validator.ts",
     "start:dev:presentation": "tsx watch src/server-presentation.ts",
     "start:doc": "tsx watch src/server-documentation.ts",
+    "start:benchmark:express": "tsx watch benchmark/express.ts",
+    "start:benchmark:fastify": "tsx watch benchmark/fastify.ts",
+    "start:benchmark:cannon": "tsx watch benchmark/autocannon.ts",
     "build": "tsup src"
   },
   "author": "gabrielbsx",
